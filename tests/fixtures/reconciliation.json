@@ -1,0 +1,9 @@
+{
+  "data": {
+    "date": "2026-10-26",
+    "runs": [{ "provider": "bidv", "status": "completed", "matched": 120, "mismatched": 1, "ran_at": "…" }],
+    "discrepancies": [
+      { "provider": "bidv", "kind": "missing_in_gateway", "provider_transaction_id": "FT…", "amount": 500000, "pay_code": "HP99", "resolved": false }
+    ]
+  }
+}

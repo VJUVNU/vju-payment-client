@@ -1,0 +1,6 @@
+{
+  "id": "evt_01JB…",
+  "event": "payment.paid",
+  "occurred_at": "2026-10-27T09:41:12+07:00",
+  "data": { …Payment }
+}

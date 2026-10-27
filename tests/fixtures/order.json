@@ -1,0 +1,28 @@
+{
+  "ref": "HP1234",
+  "pay_code": "HP1234",
+  "method": "bidv",
+  "type": "qr",
+  "status": "open",
+  "amount_due": 1200000,
+  "amount_paid": 0,
+  "currency": "VND",
+  "customer_name": "Nguyễn Văn A",
+  "description": "Học phí đợt 1 năm học 2026-2027",
+  "items": [{ "label": "Học phí", "amount": 1200000 }],
+  "priority": 100,
+  "valid_from": "2026-10-01",
+  "expires_at": "2026-10-31",
+  "payment": {
+    "bank_code": "BIDV",
+    "account_no": "V3CNTHP1234",
+    "account_name": "TRUONG DAI HOC VIET NHAT",
+    "qr_string": "00020101021238…",
+    "qr_image": "data:image/png;base64,…",
+    "checkout_url": null,
+    "issued_at": "2026-10-27T09:30:00+07:00"
+  },
+  "metadata": { "student_code": "22110001" },
+  "created_at": "…",
+  "updated_at": "…"
+}

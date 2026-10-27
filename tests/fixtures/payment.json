@@ -1,0 +1,11 @@
+{
+  "id": 5012,
+  "ref": "HP1234",
+  "pay_code": "HP1234",
+  "method": "bidv",
+  "amount": 1200000,
+  "provider_transaction_id": "FT26300123456",
+  "paid_at": "2026-10-27T09:41:12+07:00",
+  "payer_note": "HP1234 thanh toan hoc phi",
+  "metadata": { "student_code": "22110001" }
+}
