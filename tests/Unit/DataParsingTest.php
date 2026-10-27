@@ -166,6 +166,13 @@ class DataParsingTest extends TestCase
         $this->assertSame($this->fixture('order-request.json'), $request->toArray());
     }
 
+    public function test_legacy_pay_code_is_not_format_checked(): void
+    {
+        $request = OrderRequest::make(ref: 'HP1', amount: 1, method: 'bidv', customerName: 'A', payCode: 'SV-2211-0001-KHOA-CU');
+
+        $this->assertSame('SV-2211-0001-KHOA-CU', $request->toArray()['pay_code']);
+    }
+
     public function test_date_converted_to_hanoi_day(): void
     {
         // 23:30 UTC ngày 31/10 là 06:30 sáng 01/11 ở Hà Nội.
@@ -189,7 +196,7 @@ class DataParsingTest extends TestCase
             'thiếu method' => [['method' => '']],
             'thiếu customer_name' => [['customerName' => ' ']],
             'tổng items lệch' => [['items' => [['label' => 'x', 'amount' => 1]]]],
-            'pay_code sai' => [['payCode' => 'HP 1']],
+            'pay_code rỗng' => [['payCode' => ' ']],
         ];
     }
 

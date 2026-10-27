@@ -36,8 +36,8 @@ final class OrderChanges
             throw new InvalidArgumentException('amount phải lớn hơn 0 (số nguyên VND).');
         }
 
-        if ($payCode !== null && preg_match(OrderRequest::REF_PATTERN, $payCode) !== 1) {
-            throw new InvalidArgumentException("pay_code \"{$payCode}\" phải gồm 1–14 ký tự [A-Za-z0-9].");
+        if ($payCode !== null && trim($payCode) === '') {
+            throw new InvalidArgumentException('pay_code không được rỗng.');
         }
 
         $normalized = $items === null ? null : OrderRequest::normalizeItems($items);

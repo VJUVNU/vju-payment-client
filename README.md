@@ -167,6 +167,8 @@ class GhiNhanHocPhi
   dời việc ngoài CSDL ra sau cùng.
 - Listener `ShouldQueue`: đặt `public $afterCommit = true;` để job chỉ được xếp khi transaction commit. Từ lúc
   job đã xếp, lỗi của job **không** làm cổng gửi lại — job tự thử lại theo hàng đợi.
+- Webhook phải trả lời trong **10 giây** (quá thì cổng coi là hỏng và gửi lại). Listener đồng bộ chậm (gọi API,
+  sinh PDF, đẩy hoá đơn điện tử) nên chuyển sang `ShouldQueue` + `$afterCommit = true`.
 - Để `PAYMENT_GATEWAY_DB_CONNECTION` trống (kết nối mặc định) để listener ghi cùng transaction.
 
 ## Kéo dự phòng: `payment:pull`

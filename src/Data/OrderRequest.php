@@ -38,8 +38,9 @@ final class OrderRequest
             throw new InvalidArgumentException("ref \"{$ref}\" phải gồm 1–14 ký tự [A-Za-z0-9].");
         }
 
-        if ($payCode !== null && preg_match(self::REF_PATTERN, $payCode) !== 1) {
-            throw new InvalidArgumentException("pay_code \"{$payCode}\" phải gồm 1–14 ký tự [A-Za-z0-9].");
+        // pay_code không kiểm dạng: hợp đồng chỉ định dạng cho ref; app legacy_unprefixed có mã riêng.
+        if ($payCode !== null && trim($payCode) === '') {
+            throw new InvalidArgumentException('pay_code không được rỗng.');
         }
 
         if ($amount <= 0) {
